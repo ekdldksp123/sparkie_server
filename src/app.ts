@@ -1,14 +1,15 @@
 import express, { Request, Response, NextFunction, Express } from 'express';
-import writePost from '../lib/api/post/writePost';
-import getPost from '../lib/api/post/getPost';
-import getUser from '../lib/api/user/getUser';
-import registUser from '../lib/api/user/registUser';
+import writePost from './lib/api/post/writePost';
+import getPost from './lib/api/post/getPost';
+import getUser from './lib/api/user/getUser';
+import registUser from './lib/api/user/registerUser';
 
 const BASE_API_DIR = `/api/v1`;
 const app: Express = express();
+app.use(express.json());
 
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
-  console.log(req);
+  console.log('??');
   res.send('Hello World!');
 });
 
