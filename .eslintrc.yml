@@ -16,16 +16,16 @@ plugins:
   - jest
   - react
   - '@typescript-eslint'
-rules: {
+rules: 
   # Jest Eslint 옵션은 0,1,2 (off, warn, error) 만 옵션으로 사용 가능하다.
   jest/no-disabled-tests:
-    - warn,
+    - warn
   jest/no-focused-tests:
-    - error,
+    - error
   jest/no-identical-title:
-    - error,
+    - error
   jest/prefer-to-have-length:
-    - warn,
+    - warn
   jest/valid-expect:
-    - error,
-}
+    - error
+
