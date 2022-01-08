@@ -7,7 +7,7 @@
     "start": "node src/app.ts",
     "build": "tsc -p .",
     "dev": "nodemon --watch \"src/\" --exec \"ts-node\" src/app.ts",
-    "lint": "./node_modules/.bin/eslint .",
+    "lint": "./node_modules/.bin/eslint",
     "test": "./node_modules/.bin/jest --verbose"
   },
   "keywords": [],
