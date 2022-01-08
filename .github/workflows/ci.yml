@@ -27,6 +27,7 @@ jobs:
     # actions/setup-node: Node.js를 설치한다.
     # run 개념은 명령어를 실행한다. 셸 스크립트와 동일하다.
     steps:
+      - uses: actions/checkout@v2
       - name: Install dependencies
         run: |
           if [ -e yarn.lock ]; then
@@ -36,7 +37,6 @@ jobs:
           else
           npm i
           fi
-      - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
