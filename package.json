@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "common.js": "^1.1.1",
     "dotenv": "^10.0.0"
   }
 }
