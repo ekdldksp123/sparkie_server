@@ -4,6 +4,9 @@ import getPost from './lib/api/post/getPost';
 import getUser from './lib/api/user/getUser';
 import registUser from './lib/api/user/registerUser';
 import getCharger from './lib/api/external/getCharger';
+import {connect} from "./lib/mongoDB";
+
+require("dotenv").config({path: "../.env.development"});
 
 const BASE_API_DIR = `/api/v1`;
 const app: Express = express();
@@ -11,8 +14,11 @@ app.use(express.json());
 
 app.get('/', (req: Request, res: Response, next: NextFunction) => {
   console.log('??');
+  connect();
   res.send('Hello World!');
 });
+
+
 
 /**
  *  GET /api/v1/post
