@@ -4,6 +4,7 @@ import getPost from './lib/api/post/getPost';
 import getUser from './lib/api/user/getUser';
 import registUser from './lib/api/user/registerUser';
 import getCharger from './lib/api/external/getCharger';
+import registerUser from './lib/api/user/registerUser';
 
 const BASE_API_DIR = `/api/v1`;
 const app: Express = express();
@@ -13,6 +14,19 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
   console.log('??');
   res.send('Hello World!');
 });
+
+/**
+ *  GET /api/v1/user
+ *  유저 읽기
+ */
+app.get(`${BASE_API_DIR}/user`, getUser);
+
+/**
+ *  POST /api/v1/user
+ *  유저 읽기
+ */
+app.post(`${BASE_API_DIR}/user`, registerUser);
+
 
 /**
  *  GET /api/v1/post
