@@ -1,12 +1,13 @@
 import { Request, Response } from 'express';
-import { client } from '../../mongoClient';
+import { client } from '../src/database/mongoClient';
 import { Db } from 'mongodb';
 
-export default async (req: Request, res: Response) => {
-  const userProfile = req.body;
+export default async (req: Request, res:Response) => {
+  const post = req.body;
+
   try {
     const db: Db = await client.db();
-    const result = await db.collection('user').insertOne(userProfile);
+    const result = await db.collection('post').insertOne(post);
 
     res.status(200);
     res.send(result);

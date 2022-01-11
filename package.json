@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.ts",
+    "start": "node --loader ts-node/esm src/server.ts",
     "build": "tsc -p .",
-    "dev": "nodemon --watch \"src/\" --exec \"ts-node\" src/app.ts",
+    "dev": "nodemon --watch \"src/\" --exec \"ts-node\" src/server.ts",
     "lint": "./node_modules/.bin/eslint .",
     "test": "./node_modules/.bin/jest --verbose"
   },

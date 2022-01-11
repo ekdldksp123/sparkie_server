@@ -13,3 +13,7 @@
 ### 2022.01.11 (The)
 - .env 파일에 몽고 디비 정보 분리
 - mongoose 로 게시글 용 스키마 생성
+
+### 2022.01.12 (Wed)
+- express로 controllers, routes, services 로직 구분
+- mongoose로 connection pool 구성
