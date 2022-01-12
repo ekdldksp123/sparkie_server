@@ -1,4 +1,4 @@
-import mongoose, {Schema, Document, Model} from "mongoose";
+import mongoose from "mongoose";
 
 const options = {
     autoIndex: false,

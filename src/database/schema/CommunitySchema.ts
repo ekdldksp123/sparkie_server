@@ -1,4 +1,4 @@
-import mongoose, {Schema, Document, Model} from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 // Define Schemes
 const CommentSchema = new Schema({
@@ -20,4 +20,4 @@ const PostSchema = new Schema({
 });
 
 // Create Model & Export
-module.exports = mongoose.model('Post', PostSchema);
+module.exports = mongoose.model('Post', PostSchema, 'Posts');
