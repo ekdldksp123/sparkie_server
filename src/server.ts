@@ -18,7 +18,7 @@ const router = require('../routes/route');
 app.use(`${BASE_API_DIR}`, router);
 
 const communityRouter = require('../routes/communityRouter');
-app.use(`/community`, communityRouter);
+app.use(`/api/community`, communityRouter);
 
 /** 서버 로딩시 몽고 디비 연동해놓기 */
 database();
