@@ -17,3 +17,7 @@
 ### 2022.01.12 (Wed)
 - express로 controllers, routes, services 로직 구분
 - mongoose로 connection pool 구성
+
+### 2022.01.13 (Thu)
+- community 용 controllers, routes, service 분리 
+- 서버 로딩 시 게시글 데이터 mongoDB에 setting
