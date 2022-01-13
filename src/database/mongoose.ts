@@ -8,12 +8,11 @@ const options = {
     maxPoolSize: 7,
     serverSelectionTimeoutMS: 5000, // 5초동안 서버 연결이 되지 않으면 에러 발생
     socketTimeoutMS: 15000, // 15초동안 활동이 없으면 소켓 닫음
-    //bufferMaxEntries: 0, //연결되지 않은 경우 재연결 기다리지 않고 즉시 오류 반환
 }
 
+/** DB connection pool 생성 및 연결 */
 module.exports = () => {
     const connect = async () => {
-        console.log('connect() is being executed when server is loaded');
         mongoose.set("debug", true);
         const url:string = process.env.MONGO_URL!;
         await mongoose.connect(url, options)

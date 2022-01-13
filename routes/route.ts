@@ -8,7 +8,8 @@ import registerUser from '../controllers/registerUser';
 
 const router: Router = require('express').Router();
 
-const BASE_API_DIR = `/api/v1`;
+router.get('*', () => {console.log('router')});
+
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
     res.send("Hi I'm router");
 });
@@ -16,43 +17,43 @@ router.get('/', (req: Request, res: Response, next: NextFunction) => {
  *  GET /api/v1/user
  *  유저 읽기
  */
-router.get(`${BASE_API_DIR}/user`, getUser);
+router.get(`/user`, getUser);
 
  /**
   *  POST /api/v1/user
   *  유저 읽기
   */
-router.post(`${BASE_API_DIR}/user`, registerUser);
+router.post(`/user`, registerUser);
  
  
  /**
   *  GET /api/v1/post
   *  글 읽기
   */
-router.get(`${BASE_API_DIR}/post`, getPost);
+router.get(`/post`, getPost);
  
  /**
   *  POST /api/v1/post
   *  글 쓰기
   */
-router.post(`${BASE_API_DIR}/post`, writePost);
+router.post(`/post`, writePost);
  
  /**
   * GET /api/v1/register
   * 사용자 정보 보기
   */
-router.get(`${BASE_API_DIR}/register`, getUser);
+router.get(`/register`, getUser);
  
  /**
   * POST /api/v1/register
   * 사용자 등록
   */
-router.post(`${BASE_API_DIR}/register`, registUser);
+router.post(`/register`, registUser);
  
  /**
   * GET /api/v1/getCharger
   * 충전소 정보 보기
   */
-router.get(`${BASE_API_DIR}/getChargerInfo`, getCharger);
+router.get(`/getChargerInfo`, getCharger);
 
 module.exports = router;
