@@ -23,7 +23,7 @@ export const editPost = async (): Promise<any> => {
 }
 
 /** delete all posts */
-export const deleteAllPosts = async (): Promise<Boolean> => {
+export const deleteAllPosts = async (): Promise<void> => {
     let result:boolean = false;
     try {
         await Post.deleteMany({}).then(() => {
@@ -33,7 +33,7 @@ export const deleteAllPosts = async (): Promise<Boolean> => {
         if(error instanceof Error) console.log(error.message);
         result = false;
     }
-    return result;
+    if(result) console.log('delete all posts');
 }
 
 export const init = async ():Promise<void> => {
