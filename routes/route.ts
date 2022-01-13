@@ -8,7 +8,7 @@ import registerUser from '../controllers/registerUser';
 
 const router: Router = require('express').Router();
 
-router.get('*', () => {console.log('router')});
+// router.get('*', () => {console.log('router')});
 
 router.get('/', (req: Request, res: Response, next: NextFunction) => {
     res.send("Hi I'm router");

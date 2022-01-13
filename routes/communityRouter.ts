@@ -3,7 +3,7 @@ import {getPosts, editPost} from '../controllers/communityController';
 
 const router: Router = require('express').Router();
 
-router.get('*', () => {console.log('community router')});
+// router.get('*', () => {console.log('community router')});
 
 /** 모든 게시글 조회 */
 router.get('/', getPosts);
