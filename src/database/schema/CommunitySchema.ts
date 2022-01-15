@@ -2,7 +2,7 @@ import mongoose, { Schema } from "mongoose";
 
 // Define Schemes
 const CommentSchema = new Schema({
-    key: {type: String, required: true},
+    post_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Post'},
     writer: {type: String, required: true},
     date: {type: Date, required: true},
     profile: String,
@@ -10,7 +10,6 @@ const CommentSchema = new Schema({
 });
 
 const PostSchema = new Schema({
-    key: {type: String, required: true},
     title:{type: String, required: true, trim: true},
     date: {type: Date, required: true},
     writer: {type: String, required: true, trim: true},

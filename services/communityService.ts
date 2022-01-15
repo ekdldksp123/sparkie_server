@@ -38,13 +38,11 @@ export const deleteAllPosts = async (): Promise<void> => {
 
 export const init = async ():Promise<void> => {
     const comment1 = new Comment({
-        key: createUuidV4(),
         writer: 'cherry',
         date: new Date(),
         content: '좋은 글 감사합니다! 나중에 꼭 테슬라 타고 말거에요><',
     });
     const comment2 = new Comment({
-        key: createUuidV4(),
         writer: 'sangwoo',
         date: new Date(),
         content: `A wonderful serenity has taken possession of my entire soul, 
@@ -54,7 +52,6 @@ export const init = async ():Promise<void> => {
         that I neglect my talents.`
     })
     const post1 = new Post({
-        key: createUuidV4(),
         title: 'Policies to promote electric vehicle deployment',
         date: new Date(),
         writer: 'iea.org',
@@ -94,8 +91,11 @@ export const init = async ():Promise<void> => {
         
         Given their enormous number and populartity, electrifying two/three-wheelers in emerging economies is central to decarbonising transport in the near term. China is taking a lead with a ban of ICE versions of two/three-wheelers in a number of cities.`,
         likes: 3,
-        comment: [comment1, comment2],
+        //comments: [comment1, comment2]
     });
+
+    post1.comments.push(comment1);
+    post1.comments.push(comment2);
 
     await Post.create(post1).then(() => console.log('[init] insert complete!'));
 }
