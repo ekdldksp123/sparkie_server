@@ -5,7 +5,7 @@
   "main": "index.js",
   "nodemonConfig": {
     "ignore": [],
-    "watch": ["src/", "services/", "controllers/", "routes/"],
+    "watch": ["src/", "services/", "controllers/", "routes/"]
   },
   "scripts": {
     "start": "node --loader ts-node/esm src/server.ts",
