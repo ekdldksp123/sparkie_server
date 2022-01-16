@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "nodemonConfig": {
+    "ignore": [],
+    "watch": ["src/", "services/", "controllers/", "routes/"],
+  },
   "scripts": {
     "start": "node --loader ts-node/esm src/server.ts",
     "build": "tsc -p .",
-    "dev": "nodemon --watch \"src/\" --exec \"ts-node\" src/server.ts",
+    "dev": "nodemon --exec \"ts-node\" src/server.ts",
     "lint": "./node_modules/.bin/eslint .",
     "test": "./node_modules/.bin/jest --verbose"
   },
