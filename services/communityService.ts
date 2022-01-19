@@ -1,6 +1,4 @@
 /* 커뮤니티 DB 관련 작업 서비스 */
-import mongoose, {Schema} from "mongoose";
-import { createUuidV4 } from "../src/lib/common";
 
 const {Post, Comment} = require('../src/database/schema/CommunitySchema');
 
@@ -14,15 +12,25 @@ export const getAllPosts = async (): Promise<any> => {
 }
 
 /** edit specific post */
-export const editPost = async (): Promise<any> => {
+
+export const addComment = async (): Promise<any> => {
     try {
-        
+      
     } catch (error: unknown) {
-        
+        if(error instanceof Error) console.log(error.message);
+    }
+}
+
+export const updateLikes = async (id:any, value:number): Promise<void> => {
+    try {
+        await Post.updateOne({ _id: { $in: id}}, { $set: { likes: value }});
+    } catch (error: unknown) {
+        if(error instanceof Error) console.log(error.message);
     }
 }
 
 /** delete all posts */
+
 export const deleteAllPosts = async (): Promise<void> => {
     let result:boolean = false;
     try {

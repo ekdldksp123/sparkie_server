@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {getPosts, editPost} from '../controllers/communityController';
+import {getPosts, editPost, modifyNumberOfLikes} from '../controllers/communityController';
 
 const router: Router = require('express').Router();
 
@@ -10,5 +10,7 @@ router.get('/', getPosts);
 
 /** 게시글 수정 */
 router.get('/post/edit/:postId', editPost);
+
+router.get('/post/edit/:postId/:likes', modifyNumberOfLikes);
 
 module.exports = router;
