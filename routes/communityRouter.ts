@@ -11,6 +11,6 @@ router.get('/', getPosts);
 /** 게시글 수정 */
 router.get('/post/edit/:postId', editPost);
 
-router.get('/post/edit/:postId/:likes', modifyNumberOfLikes);
+router.patch('/post/edit/:postId/:likes', modifyNumberOfLikes);
 
 module.exports = router;

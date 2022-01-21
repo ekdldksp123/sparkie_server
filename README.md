@@ -21,3 +21,6 @@
 ### 2022.01.13 (Thu)
 - community 용 controllers, routes, service 분리 
 - 서버 로딩 시 게시글 데이터 mongoDB에 setting
+
+### 2022.01.22 (Sat)
+- community feed 좋아요 수 업데이트 메서드 추가 및 연동(patch)

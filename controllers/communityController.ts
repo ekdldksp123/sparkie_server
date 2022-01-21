@@ -11,8 +11,9 @@ export const getPosts = async (req:Request, res:Response) => {
 }
 
 export const modifyNumberOfLikes = async (req:Request, res:Response) => {
+    const {postId, likes} = req.params;
     try {
-        await updateLikes(req.params.is, Number(req.params.number))
+        await updateLikes(postId, Number.parseInt(likes))
             .then(() => res.status(200).send({result: 'Y'}));
     } catch (error: unknown) {
         if(error instanceof Error) res.status(400).send({error: error.message});
