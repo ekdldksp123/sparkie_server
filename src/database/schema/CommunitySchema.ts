@@ -14,7 +14,6 @@ const PostSchema = new Schema({
     date: {type: Date, required: true},
     writer: {type: String, required: true, trim: true},
     content: {type: String, required: true},
-    // likes: {type: Number, default: 0},
     likes: Number,
     comments: [CommentSchema], 
 });

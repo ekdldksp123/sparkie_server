@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { getAllPosts, updateLikes } from "../services/communityService";
+import { getAllPosts, updateLikes, addComment } from "../services/communityService";
 
 export const getPosts = async (req:Request, res:Response) => {
     try {
@@ -10,7 +10,7 @@ export const getPosts = async (req:Request, res:Response) => {
     }
 }
 
-export const modifyNumberOfLikes = async (req:Request, res:Response) => {
+export const updateNumberOfLikes = async (req:Request, res:Response) => {
     const {postId, likes} = req.params;
     try {
         await updateLikes(postId, Number.parseInt(likes))
@@ -20,9 +20,11 @@ export const modifyNumberOfLikes = async (req:Request, res:Response) => {
     }
 }
 
-export const editPost = async (req:Request, res:Response) => {
+export const addCommentOnPost = async (req:Request, res:Response) => {
+    const { body : { post_id, writer, profile, content }} = req;
     try {
-        
+        await addComment(post_id, writer, profile, content)
+            .then(() => res.status(200).send({result: 'Y'}));
     } catch (error: unknown) {
         if(error instanceof Error) res.status(400).send({error: error.message});
     }
