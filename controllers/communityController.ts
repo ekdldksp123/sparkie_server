@@ -21,9 +21,9 @@ export const updateNumberOfLikes = async (req:Request, res:Response) => {
 }
 
 export const addCommentOnPost = async (req:Request, res:Response) => {
-    const { body : { post_id, writer, profile, content }} = req;
+    const { body : { post_id, writer, content }} = req;
     try {
-        await addComment(post_id, writer, profile, content)
+        await addComment(post_id, writer, '', content)
             .then(() => res.status(200).send({result: 'Y'}));
     } catch (error: unknown) {
         if(error instanceof Error) res.status(400).send({error: error.message});
