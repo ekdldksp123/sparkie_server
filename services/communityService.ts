@@ -16,16 +16,19 @@ export const getAllPosts = async (): Promise<any> => {
 export const addComment = async (id:any, writer:string, profile:string = "default", content:string): Promise<any> => {
     try {
       const comment = new Comment({
+          id: id,
           writer: writer,
           date: new Date(),
           profile: profile,
           content: content,
       });
-
-      const post = await Post.findById({_id: {$in: id}});
-      const cmts = post.comments;
-      cmts.push(comment);
-      await Post.updateOne({ _id: { $in: id}}, { $set: { comments: cmts }});
+      await comment.save();
+      const post = await Post.findById(id);
+      post.comments.push(comment);
+      await post.save();
+    //   const cmts = post.comments;
+    //   cmts.push(comment);
+    //   await Post.updateOne({ _id: { $in: id}}, { $set: { comments: cmts }});
     } catch (error: unknown) {
         if(error instanceof Error) console.log(error.message);
     }
